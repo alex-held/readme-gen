@@ -1,10 +1,10 @@
-const askContributingUrl = require('./contributing-url')
+import askContributingUrl from "./contributing-url";
 
 describe('askContributingUrl', () => {
   it('should return correct question format', () => {
     const contributingUrl =
       'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md'
-    const projectInfos = { contributingUrl }
+    const projectInfos = {contributingUrl}
 
     const result = askContributingUrl(projectInfos)
 

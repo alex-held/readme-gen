@@ -1,9 +1,9 @@
-const askLicenseName = require('./license-name')
+import askLicenseName from './license-name';
 
 describe('askLicenseName', () => {
   it('should return correct question format', () => {
     const licenseName = 'MIT'
-    const projectInfos = { licenseName }
+    const projectInfos = {licenseName}
 
     const result = askLicenseName(projectInfos)
 

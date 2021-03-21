@@ -1,4 +1,4 @@
-const questions = require('./')
+import questions from "./";
 
 describe('questions', () => {
   it('should export questions in the correct order', () => {

@@ -1,28 +1,26 @@
-const loadJsonFile = require('load-json-file')
-const boxen = require('boxen')
-const path = require('path')
-const getReposName = require('git-repo-name')
-const fetch = require('node-fetch')
-const fs = require('fs')
-const { isNil } = require('lodash')
+import loadJsonFile from "load-json-file";
+import boxen from "boxen";
+import path from "path";
+import getReposName from "git-repo-name";
+import fetch from "node-fetch";
+import fs from "fs";
+import {isNil} from "lodash";
+
+
+import {
+  BOXEN_CONFIG, cleanSocialNetworkUsername, doesFileExist,
+  END_MSG, getAuthorWebsiteFromGithubAPI,
+  getDefaultAnswer,
+  getDefaultAnswers,
+  getPackageJson, getPackageManagerFromLockFile,
+  getProjectName, isProjectAvailableOnNpm,
+  showEndMessage
+} from "./utils";
 
 const realPathBasename = path.basename
 const realGetReposNameSync = getReposName.sync
 
-const {
-  getPackageJson,
-  showEndMessage,
-  getProjectName,
-  END_MSG,
-  BOXEN_CONFIG,
-  getDefaultAnswer,
-  getDefaultAnswers,
-  cleanSocialNetworkUsername,
-  isProjectAvailableOnNpm,
-  getAuthorWebsiteFromGithubAPI,
-  doesFileExist,
-  getPackageManagerFromLockFile
-} = require('./utils')
+
 
 jest.mock('load-json-file')
 jest.mock('boxen')

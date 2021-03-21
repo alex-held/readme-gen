@@ -1,4 +1,4 @@
-const askInstallCommand = require('./install-command')
+import askInstallCommand from "./install-command";
 
 describe('askInstallCommand', () => {
   it('should return correct question format', () => {

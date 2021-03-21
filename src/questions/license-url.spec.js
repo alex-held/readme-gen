@@ -1,10 +1,10 @@
-const askLicenseUrl = require('./license-url')
+import askLicenseUrl from "./license-url";
 
 describe('askLicenseUrl', () => {
   it('should return correct question format', () => {
     const licenseUrl =
       'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE'
-    const projectInfos = { licenseUrl }
+    const projectInfos = {licenseUrl}
 
     const result = askLicenseUrl(projectInfos)
 
@@ -23,7 +23,7 @@ describe('askLicenseUrl', () => {
       licenseUrl:
         'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE'
     }
-    const answersContext = { licenseName: 'MIT' }
+    const answersContext = {licenseName: 'MIT'}
 
     const question = askLicenseUrl(projectInfos)
     const result = question.when(answersContext)

@@ -1,4 +1,4 @@
-const askTestCommand = require('./test-command')
+import askTestCommand from "./test-command";
 
 describe('askTestCommand', () => {
   it('should return correct question format', () => {
@@ -13,7 +13,7 @@ describe('askTestCommand', () => {
   })
 
   it('should return undefined default answer when package manager does not exists', () => {
-    const projectInfos = { hasTestCommand: true }
+    const projectInfos = {hasTestCommand: true}
 
     const result = askTestCommand(projectInfos).default({
       packageManager: undefined
@@ -23,7 +23,7 @@ describe('askTestCommand', () => {
   })
 
   it('should return undefined default answer when test command does not exists', () => {
-    const projectInfos = { hasTestCommand: false }
+    const projectInfos = {hasTestCommand: false}
 
     const result = askTestCommand(projectInfos).default({
       packageManager: 'yarn'
@@ -33,7 +33,7 @@ describe('askTestCommand', () => {
   })
 
   it('should return correct default answer when start command and package manager exists', () => {
-    const projectInfos = { hasTestCommand: true }
+    const projectInfos = {hasTestCommand: true}
 
     const result = askTestCommand(projectInfos).default({
       packageManager: 'yarn'

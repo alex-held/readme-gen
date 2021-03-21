@@ -1,10 +1,10 @@
-const askProjectDocumentationUrl = require('./project-documentation-url')
+import askProjectDocumentationUrl from './project-documentation-url';
 
 describe('askProjectDocumentationUrl', () => {
   it('should return correct question format', () => {
     const documentationUrl =
       'https://github.com/kefranabg/readme-md-generator/blob/master/README.md'
-    const projectInfos = { documentationUrl }
+    const projectInfos = {documentationUrl}
 
     const result = askProjectDocumentationUrl(projectInfos)
 

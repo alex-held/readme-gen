@@ -1,9 +1,9 @@
-const askProjectName = require('./project-name')
+import askProjectName from "./project-name";
 
 describe('askProjectName', () => {
   it('should return correct question format', () => {
     const name = 'readme-md-generator'
-    const projectInfos = { name }
+    const projectInfos = {name}
 
     const result = askProjectName(projectInfos)
 

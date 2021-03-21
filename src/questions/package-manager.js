@@ -1,4 +1,4 @@
-const isEmpty = require('lodash/isEmpty')
+import isEmpty from "lodash/isEmpty";
 
 module.exports = projectInfos => ({
   type: 'list',

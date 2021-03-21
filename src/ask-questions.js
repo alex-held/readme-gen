@@ -1,8 +1,7 @@
-const inquirer = require('inquirer')
-const { flatMap } = require('lodash')
-
-const questionsBuilders = require('./questions')
-const utils = require('./utils')
+import inquirer from 'inquirer'
+import utils from "./utils";
+import questionsBuilders from "./questions";
+import {flatMap} from "lodash";
 
 /**
  * Ask user questions and return context to generate a README

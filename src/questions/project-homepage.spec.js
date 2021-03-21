@@ -1,9 +1,9 @@
-const askProjectHomepage = require('./project-homepage')
+import askProjectHomepage from "./project-homepage";
 
 describe('askProjectHomepage', () => {
   it('should return correct question format', () => {
     const homepage = 'homepage'
-    const projectInfos = { homepage }
+    const projectInfos = {homepage}
 
     const result = askProjectHomepage(projectInfos)
 

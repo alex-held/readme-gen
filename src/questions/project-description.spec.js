@@ -1,9 +1,9 @@
-const askProjectDescription = require('./project-description')
+import askProjectDescription from "./project-description";
 
 describe('askProjectDescription', () => {
   it('should return correct question format', () => {
     const description = 'description'
-    const projectInfos = { description }
+    const projectInfos = {description}
 
     const result = askProjectDescription(projectInfos)
 

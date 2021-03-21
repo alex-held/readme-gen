@@ -1,12 +1,12 @@
-const fetch = require('node-fetch')
-const askAuthorWebsite = require('./author-website')
+import fetch from "node-fetch";
+import askAuthorWebsite from "./author-website";
 
 jest.mock('node-fetch')
 
 describe('askAuthorWebsite', () => {
   it('should return correct question format', () => {
     const authorWebsite = 'authorWebsite'
-    const projectInfos = { authorWebsite }
+    const projectInfos = {authorWebsite}
 
     const result = askAuthorWebsite(projectInfos)
 
@@ -28,7 +28,7 @@ describe('askAuthorWebsite', () => {
 
     fetch.mockReturnValueOnce(
       Promise.resolve({
-        json: () => Promise.resolve({ blog })
+        json: () => Promise.resolve({blog})
       })
     )
 

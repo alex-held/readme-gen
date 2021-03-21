@@ -1,13 +1,14 @@
-const loadJsonFile = require('load-json-file')
-const isNil = require('lodash/isNil')
-const isEmpty = require('lodash/isEmpty')
-const boxen = require('boxen')
-const path = require('path')
-const getReposName = require('git-repo-name')
-const fetch = require('node-fetch')
-const fs = require('fs')
-const escapeMarkdown = require('markdown-escape')
-const { execSync } = require('child_process')
+import loadJsonFile from "load-json-file";
+import isNil from "lodash/isNil";
+import isEmpty from "lodash/isEmpty";
+import boxen from "boxen";
+import path from "path";
+import getReposName from "git-repo-name";
+import fetch from "node-fetch";
+import fs from "fs";
+import escapeMarkdown from "markdown-escape";
+import {execSync} from "child_process";
+
 
 const END_MSG = `README.md was successfully generated.
 Thanks for using readme-md-generator!`

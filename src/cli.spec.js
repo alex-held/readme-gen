@@ -1,10 +1,12 @@
-const inquirer = require('inquirer')
-const mainProcess = require('./cli')
-const infos = require('./project-infos')
-const readme = require('./readme')
-const utils = require('./utils')
-const askQuestions = require('./ask-questions')
-const cleanContext = require('./clean-context')
+import inquirer from 'inquirer'
+import mainProcess from './cli'
+
+import infos from "./project-infos";
+
+import cleanContext from "./clean-context";
+import askQuestions from "./ask-questions";
+import utils from "./utils";
+import readme from "./readme";
 
 inquirer.prompt = jest.fn(items =>
   Promise.resolve(
@@ -16,11 +18,11 @@ inquirer.prompt = jest.fn(items =>
 )
 
 jest.mock('./ask-questions', () =>
-  jest.fn(() => Promise.resolve({ projectName: 'readme-md-generator' }))
+  jest.fn(() => Promise.resolve({projectName: 'readme-md-generator'}))
 )
 
 jest.mock('./clean-context', () =>
-  jest.fn(() => ({ projectName: 'readme-md-generator-after-context-clean' }))
+  jest.fn(() => ({projectName: 'readme-md-generator-after-context-clean'}))
 )
 
 jest.mock('./questions', () => ({
@@ -37,19 +39,20 @@ jest.mock('./questions', () => ({
     name: 'projectDescription',
     type: 'checkbox',
     choices: [
-      { value: { name: 'choiceOne', value: 1 }, checked: true },
-      { value: { name: 'choiceTwo', value: 2 }, checked: false }
+      {value: {name: 'choiceOne', value: 1}, checked: true},
+      {value: {name: 'choiceTwo', value: 2}, checked: false}
     ]
   }))
 }))
 
 describe('mainProcess', () => {
+  const customTemplatePath = ""
+
   afterEach(() => {
     askQuestions.mockClear()
   })
 
   it('should stop immediatly if user dont want overwrite', async () => {
-    const customTemplatePath = undefined
     const useDefaultAnswers = true
     infos.getProjectInfos = jest.fn()
     readme.buildReadmeContent = jest.fn()
@@ -58,7 +61,7 @@ describe('mainProcess', () => {
     readme.checkOverwriteReadme = jest.fn(() => Promise.resolve(false))
     utils.showEndMessage = jest.fn()
 
-    await mainProcess({ customTemplatePath, useDefaultAnswers })
+    await mainProcess({customTemplatePath, useDefaultAnswers})
 
     expect(infos.getProjectInfos).not.toHaveBeenCalled()
     expect(cleanContext).not.toHaveBeenCalled()
@@ -68,10 +71,10 @@ describe('mainProcess', () => {
     expect(utils.showEndMessage).not.toHaveBeenCalled()
   })
 
+
   it('should call main functions with correct args', async () => {
-    const customTemplatePath = undefined
     const useDefaultAnswers = true
-    const projectInformations = { name: 'readme-md-generator' }
+    const projectInformations = {name: 'readme-md-generator'}
     const readmeContent = 'content'
     const templatePath = 'path/to/template'
     infos.getProjectInfos = jest.fn(() => Promise.resolve(projectInformations))
@@ -81,7 +84,7 @@ describe('mainProcess', () => {
     readme.writeReadme = jest.fn()
     utils.showEndMessage = jest.fn()
 
-    await mainProcess({ customTemplatePath, useDefaultAnswers })
+    await mainProcess({customTemplatePath, useDefaultAnswers})
 
     expect(readme.getReadmeTemplatePath).toHaveBeenNthCalledWith(
       1,
@@ -99,7 +102,7 @@ describe('mainProcess', () => {
     })
     expect(readme.buildReadmeContent).toHaveBeenNthCalledWith(
       1,
-      { projectName: 'readme-md-generator-after-context-clean' },
+      {projectName: 'readme-md-generator-after-context-clean'},
       templatePath
     )
     expect(readme.writeReadme).toHaveBeenNthCalledWith(1, readmeContent)

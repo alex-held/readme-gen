@@ -1,9 +1,9 @@
-const askAuthorGithub = require('./author-github')
+import askAuthorGithub from "./author-github";
 
 describe('askAuthorGithub', () => {
   it('should return correct question format', () => {
     const githubUsername = 'kefranabg'
-    const projectInfos = { githubUsername }
+    const projectInfos = {githubUsername}
 
     const result = askAuthorGithub(projectInfos)
 

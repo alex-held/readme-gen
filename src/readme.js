@@ -1,12 +1,15 @@
-const ejs = require('ejs')
-const ora = require('ora')
-const { promisify } = require('util')
-const { getYear } = require('date-fns')
-const fs = require('fs')
-const { isNil, unescape } = require('lodash')
+import ejs from "ejs";
+import ora from "ora";
+import {promisify} from "util";
 
-const chooseTemplate = require('./choose-template')
-const askOverwriteReadme = require('./ask-overwrite')
+import {getYear} from "date-fns";
+
+import fs from "fs";
+import {isNil, unescape} from "lodash";
+
+
+import chooseTemplate from "./choose-template";
+import askOverwriteReadme from "./ask-overwrite";
 
 const README_PATH = 'README.md'
 

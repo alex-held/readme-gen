@@ -1,9 +1,9 @@
-const askIssues = require('./issues-url')
+import askIssues from "./issues-url";
 
 describe('askIssues', () => {
   it('should return correct question format', () => {
     const issuesUrl = 'https://github.com/kefranabg/readme-md-generator/issues'
-    const projectInfos = { issuesUrl }
+    const projectInfos = {issuesUrl}
 
     const result = askIssues(projectInfos)
 

@@ -1,5 +1,5 @@
-const isEmpty = require('lodash/isEmpty')
-const isNil = require('lodash/isNil')
+import isEmpty from "lodash/isEmpty";
+import isNil from "lodash/isNil";
 
 /**
  * Return engines as formatted choices
@@ -10,13 +10,13 @@ const buildFormattedChoices = engines =>
   isNil(engines)
     ? null
     : Object.keys(engines).map(key => ({
-        name: `${key} ${engines[key]}`,
-        value: {
-          name: key,
-          value: engines[key]
-        },
-        checked: true
-      }))
+      name: `${key} ${engines[key]}`,
+      value: {
+        name: key,
+        value: engines[key]
+      },
+      checked: true
+    }))
 
 /**
  * Check if projectInfos has engines properties

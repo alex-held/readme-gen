@@ -1,4 +1,4 @@
-const cleanContext = require('./clean-context')
+import cleanContext from "./clean-context";
 
 describe('cleanContext', () => {
   it('should replace licenseName and projectVersion - and _ characters by -- and __', () => {

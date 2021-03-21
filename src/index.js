@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs')
-const { noop } = require('lodash')
+import yargs from "yargs";
+import {noop} from "lodash";
 
-const mainProcess = require('./cli')
+
+import mainProcess from "./cli";
 
 yargs
   .usage('Usage: $0 <command> [options]')

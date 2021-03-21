@@ -1,0 +1,7 @@
+{
+    "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+    "no-inline-html": false,
+    "MD033": true,
+    "html": false,
+    "proper-names": true
+}

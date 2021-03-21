@@ -1,4 +1,5 @@
-const { cleanSocialNetworkUsername } = require('../utils')
+import {cleanSocialNetworkUsername} from "../utils";
+
 
 module.exports = projectInfos => ({
   type: 'input',

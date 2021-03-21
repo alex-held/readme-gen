@@ -1,4 +1,4 @@
-const isNil = require('lodash/isNil')
+import isNil from "lodash/isNil";
 
 module.exports = projectInfos => ({
   type: 'input',

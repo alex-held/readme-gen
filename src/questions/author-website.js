@@ -1,4 +1,5 @@
-const { getAuthorWebsiteFromGithubAPI } = require('../utils')
+import {getAuthorWebsiteFromGithubAPI} from "../utils";
+
 
 module.exports = projectInfos => ({
   type: 'input',

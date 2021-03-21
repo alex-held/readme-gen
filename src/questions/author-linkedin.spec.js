@@ -1,4 +1,4 @@
-const askAuthorLinkedIn = require('./author-linkedin')
+import askAuthorLinkedIn from "./author-linkedin";
 
 describe('askAuthorLinkedIn', () => {
   it('should return correct question format', () => {

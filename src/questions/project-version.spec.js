@@ -1,9 +1,9 @@
-const askProjectVersion = require('./project-version')
+import askProjectVersion from "./project-version";
 
 describe('askProjectVersion', () => {
   it('should return correct question format', () => {
     const version = '1.0.0'
-    const projectInfos = { version }
+    const projectInfos = {version}
 
     const result = askProjectVersion(projectInfos)
 

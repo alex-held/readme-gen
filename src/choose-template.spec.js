@@ -1,7 +1,6 @@
-const inquirer = require('inquirer')
-const path = require('path')
-
-const chooseTemplate = require('./choose-template')
+import inquirer from 'inquirer'
+import chooseTemplate from "./choose-template";
+import path from 'path';
 
 const defaultTemplatePath = path.resolve(__dirname, '../templates/default.md')
 const defaultNoHtmlTemplatePath = path.resolve(

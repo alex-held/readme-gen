@@ -1,4 +1,4 @@
-const askUsage = require('./usage')
+import askUsage from "./usage";
 
 describe('askUsage', () => {
   it('should return correct question format', () => {
@@ -14,7 +14,7 @@ describe('askUsage', () => {
   })
 
   it('should return undefined default answer when package manager does not exists', () => {
-    const projectInfos = { hasStartCommand: true }
+    const projectInfos = {hasStartCommand: true}
 
     const result = askUsage(projectInfos).default({
       packageManager: undefined
@@ -24,7 +24,7 @@ describe('askUsage', () => {
   })
 
   it('should return undefined default answer when start command does not exists', () => {
-    const projectInfos = { hasStartCommand: false }
+    const projectInfos = {hasStartCommand: false}
 
     const result = askUsage(projectInfos).default({
       packageManager: 'yarn'
@@ -34,7 +34,7 @@ describe('askUsage', () => {
   })
 
   it('should return correct default answer when start command and packageManager exists', () => {
-    const projectInfos = { hasStartCommand: true }
+    const projectInfos = {hasStartCommand: true}
 
     const result = askUsage(projectInfos).default({
       packageManager: 'yarn'

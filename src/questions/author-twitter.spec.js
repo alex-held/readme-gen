@@ -1,4 +1,4 @@
-const askAuthorTwitter = require('./author-twitter')
+import askAuthorTwitter from "./author-twitter";
 
 describe('askAuthorTwitter', () => {
   it('should return correct question format', () => {

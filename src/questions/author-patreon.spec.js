@@ -1,4 +1,4 @@
-const askPatreonUsername = require('./author-patreon')
+import askPatreonUsername from "./author-patreon";
 
 describe('askPatreonUsername', () => {
   it('should return correct question format', () => {
