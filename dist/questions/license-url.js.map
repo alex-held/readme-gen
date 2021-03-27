@@ -1,0 +1,1 @@
+{"version":3,"file":"license-url.js","sourceRoot":"","sources":["../../src/questions/license-url.js"],"names":[],"mappings":";;;AAAA,qEAAqC;AAErC,MAAM,CAAC,OAAO,GAAG,YAAY,CAAC,EAAE,CAAC,CAAC;IAChC,IAAI,EAAE,OAAO;IACb,OAAO,EAAE,2CAA2C;IACpD,IAAI,EAAE,YAAY;IAClB,OAAO,EAAE,YAAY,CAAC,UAAU;IAChC,IAAI,EAAE,cAAc,CAAC,EAAE,CAAC,CAAC,iBAAO,CAAC,cAAc,CAAC,WAAW,CAAC;CAC7D,CAAC,CAAA"}

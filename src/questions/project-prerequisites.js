@@ -19,7 +19,7 @@ const buildFormattedChoices = engines =>
     }))
 
 /**
- * Check if projectInfos has engines properties
+ * Check if pinfo has engines properties
  *
  * @param {Object} projectInfos
  */

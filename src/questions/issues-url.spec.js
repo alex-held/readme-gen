@@ -1,4 +1,4 @@
-import askIssues from "./issues-url";
+import askIssues from './issues-url';
 
 describe('askIssues', () => {
   it('should return correct question format', () => {

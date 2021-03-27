@@ -21,7 +21,35 @@ import install_command from "./install-command";
 import usage from "./usage";
 import test_command from "./test-command";
 
+
+const builders = {
+  askProjectName: project_name,
+  askProjectVersion: project_version,
+  askProjectDescription: project_description,
+  askPackageManager: package_manager,
+  askProjectHomepage: project_homepage,
+  askProjectDemoUrl: project_demo_url,
+  askProjectDocumentationUrl: project_documentation_url,
+  askAuhtorName: author_name,
+  askAuthorGithub: author_github,
+  askAuthorWebsite: author_website,
+  askAuthorTwitter: author_twitter,
+  askAuthorLinkedIn: author_linkedin,
+  askAuthorPatreon: author_patreon,
+  askProjectPrerequisites: project_prerequisites,
+  askLicenseName: license_name,
+  askLicenseUrl: license_url,
+  askIssuesUrl: issues_url,
+  askContributingUrl: contributing_url,
+  askInstallCommand: install_command,
+  askUsage: usage,
+  askTestCommand: test_command
+}
+
+export default builders
+
 module.exports = {
+  builders,
   askProjectName: project_name,
   askProjectVersion: project_version,
   askProjectDescription: project_description,

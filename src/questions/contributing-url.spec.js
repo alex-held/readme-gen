@@ -1,4 +1,4 @@
-import askContributingUrl from "./contributing-url";
+import askContributingUrl from './contributing-url';
 
 describe('askContributingUrl', () => {
   it('should return correct question format', () => {

@@ -12,6 +12,9 @@ yargs
     const { path: customTemplatePath, yes: useDefaultAnswers } = args
     mainProcess({ customTemplatePath, useDefaultAnswers })
   })
+  .boolean('c')
+  .alias('c','config')
+  .describe('config', 'generates a config file')
   .string('p')
   .alias('p', 'path')
   .describe('path', 'Path to your own template')

@@ -1,23 +1,7 @@
 import fs from 'fs'
 import os from 'os'
-import console from 'console'
 import path from 'path'
-import Dict = NodeJS.Dict;
 
-export interface Config {
-  customTemplatesDir: string;
-  useHTML: boolean;
-  projectVersion: string;
-  authorName: string;
-  authorWebsite: string;
-  githubUsername: string;
-  twitterUsername: string;
-  linkedinUsername: string;
-  patreonUsername: string;
-  license: string;
-}
-
-export type UpdateFn = (cfg: Config) => Config
 
 const defaultCfgFileName = 'config.json'
 
@@ -29,7 +13,7 @@ const getDefaultCfgPath = () => {
   const cfgRoot = getDefaultCfgRoot()
   return path.resolve(cfgRoot, defaultCfgFileName)
 }
-const loadCfg: (cfgPath?: string) => Config = (cfgPath: string = null) => {
+const loadCfg = (cfgPath: string = null) => {
   if (cfgPath == null) {
     cfgPath = getDefaultCfgPath()
   }
@@ -40,7 +24,7 @@ const loadCfg: (cfgPath?: string) => Config = (cfgPath: string = null) => {
     encoding: 'utf-8',
     flag: 'r'
   })
-  const cfg : Config= JSON.parse(jsonFile)
+  const cfg: Config = JSON.parse(jsonFile)
   return cfg
 }
 
@@ -70,7 +54,23 @@ const newDefaultConfig: () => Config = () => {
 }
 
 
-module.exports = {
+export interface Config {
+  customTemplatesDir: string;
+  useHTML: boolean;
+  projectVersion: string;
+  authorName: string;
+  authorWebsite: string;
+  githubUsername: string;
+  twitterUsername: string;
+  linkedinUsername: string;
+  patreonUsername: string;
+  license: string;
+}
+
+export type UpdateFn = (cfg: Config) => Config
+
+
+const config = {
   getDefaultCfgRoot,
   getDefaultCfgPath,
   newDefaultConfig,
@@ -78,3 +78,12 @@ module.exports = {
   storeCfg,
 }
 
+export default config
+module.exports = {
+  config,
+  getDefaultCfgRoot,
+  getDefaultCfgPath,
+  newDefaultConfig,
+  loadCfg,
+  storeCfg,
+}

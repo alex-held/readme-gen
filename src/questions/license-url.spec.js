@@ -18,7 +18,7 @@ describe('askLicenseUrl', () => {
     )
   })
 
-  it('should show this question if licenseName is defined', () => {
+  it('should show this question if license is defined', () => {
     const projectInfos = {
       licenseUrl:
         'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE'
@@ -31,7 +31,7 @@ describe('askLicenseUrl', () => {
     expect(result).toBe(true)
   })
 
-  it('should not show this question if licenseName is not defined', () => {
+  it('should not show this question if license is not defined', () => {
     const projectInfos = {
       licenseUrl:
         'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE'

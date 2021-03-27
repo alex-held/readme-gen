@@ -1,0 +1,1 @@
+{"version":3,"file":"author-github.js","sourceRoot":"","sources":["../../src/questions/author-github.js"],"names":[],"mappings":";;AAAA,oCAAoD;AAGpD,MAAM,CAAC,OAAO,GAAG,YAAY,CAAC,EAAE,CAAC,CAAC;IAChC,IAAI,EAAE,OAAO;IACb,OAAO,EAAE,+CAA+C;IACxD,IAAI,EAAE,sBAAsB;IAC5B,OAAO,EAAE,YAAY,CAAC,cAAc;IACpC,MAAM,EAAE,kCAA0B;CACnC,CAAC,CAAA"}
